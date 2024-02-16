@@ -1,9 +1,9 @@
 import flet as ft, random, time
 from bs4 import BeautifulSoup
 import re
-'''from pyrae import dle
-from pydex import dex
-from pydexen import dexen'''
+#from pyrae import dle
+#from pydex import dex
+#from pydexen import dexen'''
 from definitii import definitie_es as dfn_es
 from definitii import definitie_ro as dfn_ro
 count=10
@@ -131,11 +131,11 @@ def main(page: ft.Page):
         
         if lb_cuv=='es':
             dfn = dfn_es.definitie_es(choice)
-            definitie = f'1. {dfn}'
+            definitie = dfn
         elif lb_cuv=='en':
             definitie = ''
-            '''definitie = dexen.search_by_word(word=choice)
-            definitie.to_dict()'''
+           #definitie = dexen.search_by_word(word=choice)
+            #definitie.to_dict()
             
         elif lb_cuv == 'ro':
             definitie = dfn_ro.definitie_ro(choice)
