@@ -1,4 +1,4 @@
-app = "rock"
+app = "Cuvinte"
 
 kill_signal = "SIGINT"
 kill_timeout = 5

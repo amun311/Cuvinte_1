@@ -1,0 +1,30 @@
+{
+  "lang": "ro",
+  "name": "Cuvantul zilei",
+  "short_name": "Cuvinte",
+  "id":"Cuvinte",
+
+  "start_url": ".",
+  "display_override": ["fullscreen", "minimal-ui"],
+  "display": "standalone"
+  "orientation": "natural",
+  "background_color": "#fff",
+  "dir":"assets",
+  "description": "Gaseste cuvantul zilei.",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/?source=pwa",
+  shortcuts": [
+  {
+    "name": "Cuvinte alese",
+    "short_name": "Cuvinte",
+    "description": "Un joc pentru a ghicii cuvantul",
+    "url": "/?source=pwa",
+    "icons": [{ "src": "icon.png", "sizes": "192x192" }]
+  },
+}

@@ -76,7 +76,7 @@ class Code_show():
 
 
 def main(page: ft.Page):
-    page.title = 'Rock'
+    page.title = 'Cuvinte'
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
     page.scroll = 'always'    
     page.theme_mode = ft.ThemeMode.DARK
@@ -455,7 +455,7 @@ def main(page: ft.Page):
         
         lista=[Code_show(lista_caractere,choice,lang) for i in range(len(choice))]
         lista_container=[ft.Container(col={"xs": 12/len(choice), "md": 12/len(choice), "xl":12/len(choice)},) for i in range(len(choice))]
-        lista_cont_probe = [ft.Container(col={"xs": 12/len(choice), "md": 12/len(choice), "xl":12/len(choice)}, height=243) for i in range(len(choice))]
+        lista_cont_probe = [ft.Container(col={"xs": 12/len(choice), "md": 12/len(choice), "xl":12/len(choice)}, height=143) for i in range(len(choice))]#243
         for i in range(len(choice)):  
                 lista_cont_probe[i].content = ft.ListView(spacing=1)
                 lista_cont_probe[i].scroll = 'always'    
@@ -483,4 +483,4 @@ def main(page: ft.Page):
             lb_cuv = cfg[2]
         game(lb,mod,lb_cuv)    
     except: game('ro','cuvant6','ro')
-ft.app(target=main,view=ft.AppView.WEB_BROWSER) #view=ft.AppView.WEB_BROWSER, 
+ft.app(target=main,view=ft.AppView.WEB_BROWSER, assets_dir='assets') #view=ft.AppView.WEB_BROWSER, 
