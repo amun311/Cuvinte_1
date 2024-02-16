@@ -4,8 +4,8 @@ import re
 #from pyrae import dle
 #from pydex import dex
 #from pydexen import dexen'''
-from definitii import definitie_es as dfn_es
-from definitii import definitie_ro as dfn_ro
+from assets.definitii import definitie_es as dfn_es
+from assets.definitii import definitie_ro as dfn_ro
 count=10
 vieti = 10
 lista_caractere_ro = ['A','Ă','Â','B','C','D','E','F','G','H','I','Î','J','K','L','M','N','O','P','Q','R','S','Ș','T','Ț','U','V','W','X','Y','Z']
