@@ -1,13 +1,12 @@
- 
-FROM python:3-alpine
+ FROM python:3-alpine
 
-WORKDIR /app
+ WORKDIR /app
 
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+ COPY requirements.txt ./
+ RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+ COPY . .
 
-EXPOSE 8080
+ EXPOSE 8080
 
-CMD ["python", "./main.py"]
+ CMD ["python", "./main.py"]

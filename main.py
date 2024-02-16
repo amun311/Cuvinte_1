@@ -483,4 +483,5 @@ def main(page: ft.Page):
             lb_cuv = cfg[2]
         game(lb,mod,lb_cuv)    
     except: game('ro','cuvant6','ro')
-ft.app(target=main,view=ft.AppView.WEB_BROWSER, assets_dir='assets') #view=ft.AppView.WEB_BROWSER, 
+ft.app(target=main, assets_dir="assets", view=ft.WEB_BROWSER)
+#ft.app(target=main,view=ft.AppView.WEB_BROWSER) #view=ft.AppView.WEB_BROWSER, 
