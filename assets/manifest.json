@@ -4,7 +4,7 @@
   "start_url": ".",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#0175C2",
+  "theme_color": "#12a0fe",
   "description": "Hai sa decoperim cuvinte",
   "orientation": "natural",
   "prefer_related_applications": false,
