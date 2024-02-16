@@ -14,11 +14,11 @@ def schimba_limba(cod_limba):
 
     ro=['Limba','Ajutor','Despre','Alege-ti limba','Romana','Spaniola','Litera la pozitia corecta','Litera este la pozitia incorecta','Toate literele identice din cuvant\n\t\t\t\t\t\t\t\t\t\t\t\t descoperite','Litera nu este in cuvant','Exista',
         'cuvinte din','litere','Gliseaza pentru a alege marimea cuvantului','Nu, nu, nu!!! ','\t\t\tImi pare rau, nu ai reusit\n','\t\t\t\t\t\t  sa ghicesti cuvantul','\t\t\t\t\t\t\tCuvantul era:\n','\t\t Ai reusit in \n \t','minut','secunde\n\t\t\t\t\t\t si',
-        'minute','incercari','Felicitari','Verifica','Cuvantul zilei in','Limba cuvant','Engleza']
+        'minute','incercari','Felicitari','Verifica','Printre cuvinte in','Limba cuvant','Engleza']
 
     es=['Idioma','Ayuda','Acerca de','Elige tu idioma','Rumano','Español','Letra en la posicion correcta','Letra en la posicion incorrecta','Todas las letras iguales de la\n\t\t\t\t\t\t\t\t\t\t\t  palabra encontradas','La letra no esta en la palabra','Hay',
         'palabras de','letras','Desliza para elegir el tamaño de la palabra','No, no, no!!! ','\t\tLo siento, no has logrado\n','\t\t\t\t\t\t  encontrar la palabra','\t\t\t\t\tLa palabra era:\n','\t\t Lo has conseguido en  \n \t','minuto','segundos\n\t\t\t\t\t\t y',
-        'minutos', 'intentos','Felicidades','Comprueba','La palabra del dia en','Idioma palabra','Ingles']
+        'minutos', 'intentos','Felicidades','Comprueba','Entre palabras en','Idioma palabra','Ingles']
     if cod_limba == 'ro':
         lang=ro
        
@@ -474,7 +474,7 @@ def main(page: ft.Page):
             ft.ResponsiveRow([i for i in lista_cont_probe],alignment=ft.MainAxisAlignment.CENTER),           
                     
         )
-    try:
+    '''try:
         with open('./rock.cfg','r') as cfg:
             cfg = cfg.readline().split(',')
             print(cfg)
@@ -482,6 +482,8 @@ def main(page: ft.Page):
             mod= cfg[1]
             lb_cuv = cfg[2]
         game(lb,mod,lb_cuv)    
-    except: game('ro','cuvant6','ro')
+    except: game('ro','cuvant6','ro')'''
+  
+    game('es', 'cuvant5', 'es')
 ft.app(target=main, assets_dir="assets", view=ft.WEB_BROWSER)
 #ft.app(target=main,view=ft.AppView.WEB_BROWSER) #view=ft.AppView.WEB_BROWSER, 
