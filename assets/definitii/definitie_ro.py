@@ -2,8 +2,6 @@ import re
 import urllib.request as urllib
 from bs4 import BeautifulSoup
 def definitie_ro(cuv):
-    user_agent = 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_4; en-US) AppleWebKit/534.3 (KHTML, like Gecko) Chrome/6.0.472.63 Safari/534.3'
-    headers = { 'User-Agent' : user_agent }
     try:
       req = urllib.Request(f'https://dex.ro/{cuv}', None, headers)
       response = urllib.urlopen(req)
@@ -44,15 +42,7 @@ def definitie_ro(cuv):
     defn_list = [definitie1,definitie2,definitie3,definitie4]
     for defn in defn_list:
         if len(str(defn)) >= len(str(definitie)):
-            definitie = defn
-    '''if len(str(definitie1))>len(str(definitie3)) and len(str(definitie1))>len(str(definitie2)) and len(str(definitie1))>len(str(definitie4)):
-        definitie = definitie1
-    elif  len(str(definitie2))+30>len(str(definitie1)) and len(str(definitie2)) >len(str(definitie3)) and len(str(definitie2))+30>len(str(definitie4)):
-        definitie = definitie2   
-    elif len(str(definitie3))>len(str(definitie1)) and len(str(definitie3))>len(str(definitie2)) and len(str(definitie3))>len(str(definitie4)):
-        definitie = definitie3
-    elif len(str(definitie4))>len(str(definitie1)) and len(str(definitie4))>len(str(definitie2)) and len(str(definitie4))>len(str(definitie3)):
-        definitie = definitie4'''
+            definitie = defn   
     return definitie
 
 

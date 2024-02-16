@@ -1,11 +1,70 @@
 import flet as ft, random, time
-from bs4 import BeautifulSoup
 import re
-#from pyrae import dle
-#from pydex import dex
-#from pydexen import dexen'''
-from definitii import definitie_es as dfn_es
-from definitii import definitie_ro as dfn_ro
+import urllib.request as urllib
+from bs4 import BeautifulSoup
+def definitie_ro(cuv):
+    try:
+      req = urllib.Request(f'https://dex.ro/{cuv}', None, headers)
+      response = urllib.urlopen(req)
+      page = response.read()
+      soup = BeautifulSoup(page.decode(), 'html.parser')
+      #print(soup)
+      response.close() 
+    except: soup =''
+    #pt1 = r'</i> \d\) ((\w*\s*,?)*.) '
+    pt1 = r'</i>\)? \d\)?.? ?((\w*\s*,?)*.) '
+    pt2 = r'</span>((\w*\s*,*\(?\)?)*.) '
+    pt3 = r'<meta content=\"\w+,? ?-?\w+,? ?\w+?,? ? -?(\w*\s*,? ?-?.*)◊?\" '
+    pt4 =r'</strong> ((\w*\s*,*;?)*.)'
+    definitie=''
+    definitie1=''
+    definitie2=''
+    definitie3=''
+    definitie4=''
+    try:
+        defn = re.search(pt1,str(soup))        
+        definitie1  = defn.group(1)
+    except:pass
+
+    try: 
+        defn = re.search(pt2,str(soup))
+        definitie2  = defn.group(1)
+    except:pass
+
+
+    try: 
+        defn = re.search(pt3,str(soup))
+        definitie3  = defn.group(1)
+    except:pass
+    try: 
+        defn = re.search(pt4,str(soup))
+        definitie4  = defn.group(1)
+    except:pass
+    defn_list = [definitie1,definitie2,definitie3,definitie4]
+    for defn in defn_list:
+        if len(str(defn)) >= len(str(definitie)):
+            definitie = defn   
+    return definitie
+def definitie_es(cuv):
+  try:
+    req = urllib.Request(f'https://dle.rae.es/{cuv}', None, headers)
+    response = urllib.urlopen(req)
+    page = response.read()
+    soup = BeautifulSoup(page.decode(), 'html.parser')
+    #print(soup)
+    response.close() 
+  except: soup = ''
+  pt = r'1. (\w{1,}. \w*\s*.*).\",'
+  definitie = re.search(pt,str(soup))
+  #definitie = str(definitie)
+  try:
+      definitie= definitie.group(1)
+  except:
+      definitie = ''
+  dfn = str(definitie).lstrip("['").rstrip("']")
+
+  return dfn
+
 count=10
 vieti = 10
 lista_caractere_ro = ['A','Ă','Â','B','C','D','E','F','G','H','I','Î','J','K','L','M','N','O','P','Q','R','S','Ș','T','Ț','U','V','W','X','Y','Z']
@@ -130,7 +189,7 @@ def main(page: ft.Page):
         choice = alege_cuvantul(x[1],lb_cuv)
         
         if lb_cuv=='es':
-            dfn = dfn_es.definitie_es(choice)
+            dfn = definitie_es(choice)
             definitie = dfn
         elif lb_cuv=='en':
             definitie = ''
@@ -138,7 +197,7 @@ def main(page: ft.Page):
             #definitie.to_dict()
             
         elif lb_cuv == 'ro':
-            definitie = dfn_ro.definitie_ro(choice)
+            definitie = definitie_ro(choice)
         else: definitie =''    
         page.clean()
         page.drawer = ft.NavigationDrawer(
