@@ -71,9 +71,7 @@ lista_caractere_ro = ['A','Ă','Â','B','C','D','E','F','G','H','I','Î','J','K'
 lista_caractere_es = ['A','B','C','D','E','F','G','H','I','J','K','L','M','Ñ','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 def schimba_limba(cod_limba):
 
-    ro=['Limbă','Ajutor','Despre','Alege-ți limba','Română','Spaniolă','Literă la poziția corectă','Litera este la poziția incorectă','Toate literele identice din cuvânt\n\t\t\t\t\t\t\t\t\t\t\t\t descoperite','Litera nu este în cuvânt','Există',
-        'cuvinte din','litere','Glisează pentru a alege mărimea cuvântului','Nu, nu, nu!!! ','\t\t\t Îmi pare rău, nu ai reușit \n','\t\t\t\t\t\t  să ghicești cuvântul','\t\t\t\t\t\t\t Cuvântul era:\n','\t\t Ai reușit în \n \t','minut','secunde\n\t\t\t\t\t\t si',
-        'minute','încercări','Felicitări','Verifică','Printre cuvinte în','Limbă cuvânt','Engleză']
+    ro=['Limbă','Ajutor','Despre','Alege limba','Română', 'Spaniolă', 'Literă la poziția corectă', 'Litera este la poziția incorectă', 'Toate literele identice din cuvânt \n\t\t\t\t\t\t\t\t\t\t\t\t descoperite', 'Litera nu este în cuvânt', 'Există', 'cuvinte din' , 'litere', 'Glisează pentru a alege mărimea cuvântului','Nu, nu, nu!!! ','\t\t\t Îmi pare rău, nu ai reușit \n','\t\t\t\t\t\t  să ghicești cuvântul','\t\t\t\t\t\t\t Cuvântul era:\n','\t\t Ai reușit în \n \t','minut', 'secunde \n\t\t\t\t\t\t si','minute', 'încercări', 'Felicitări', 'Verifică', 'Printre cuvinte în', 'Limbă cuvânt', 'Engleză']
 
     es=['Idioma','Ayuda','Acerca de','Elige tu idioma','Rumano','Español','Letra en la posicion correcta','Letra en la posicion incorrecta','Todas las letras iguales de la\n\t\t\t\t\t\t\t\t\t\t\t  palabra encontradas','La letra no esta en la palabra','Hay',
         'palabras de','letras','Desliza para elegir el tamaño de la palabra','No, no, no!!! ','\t\tLo siento, no has logrado\n','\t\t\t\t\t\t  encontrar la palabra','\t\t\t\t\tLa palabra era:\n','\t\t Lo has conseguido en  \n \t','minuto','segundos\n\t\t\t\t\t\t y',
